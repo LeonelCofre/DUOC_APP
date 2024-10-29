@@ -25,3 +25,165 @@
 #container a {
   text-decoration: none;
 }
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+ion-header, ion-toolbar {
+  background-color: #0c360d; /* Color de fondo moderno */
+  color: white; /* Color del texto */
+}
+
+ion-content {
+  background-color: #f4f4f4; /* Fondo claro para el contenido */
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Asegura que el contenido ocupe toda la altura de la pantalla
+  background-color: #ffffff; // Fondo blanco para un aspecto limpio
+  color: #333333; // Texto en gris oscuro para mejor legibilidad
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  ion-icon {
+    font-size: 2rem;
+    margin: 0 5px;
+  }
+
+  .car {
+    color: #4a4a4a; // Color gris oscuro para el auto
+    animation: driveCar 4s infinite;
+  }
+
+  .person-left, .person-right {
+    color: #4a4a4a; // Color gris oscuro para las personas
+    position: absolute;
+    bottom: 0;
+    animation: enterCar 2s infinite alternate;
+  }
+
+  .person-left {
+    left: -20px;
+  }
+
+  .person-right {
+    right: -20px;
+  }
+
+  .welcome-text {
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s; // Animación de entrada suave
+  }
+
+  ion-button {
+    background-color: #1a237e; // Azul oscuro para los botones
+    color: #ffffff; // Texto blanco para contraste
+    --background-hover: #0d1b5e; // Fondo más oscuro al pasar el ratón
+    margin: 10px 0;
+    border-radius: 5px; // Bordes redondeados para un estilo más elegante
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra para dar profundidad
+    transition: transform 0.2s, box-shadow 0.2s; // Transiciones suaves
+
+    &:hover {
+      transform: translateY(-2px); // Efecto de elevación al pasar el ratón
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); // Sombra más pronunciada
+    }
+  }
+
+  ion-button:last-of-type {
+    opacity: 0.8; // Botón de "Salir" ligeramente más opaco
+  }
+}
+
+ion-icon {
+  color: #00ffcc; /* Color futurista para los íconos */
+  margin: 0 5px;
+}
+
+ion-button {
+  margin: 10px;
+  --background: #00ffcc; /* Color de fondo del botón */
+  --background-hover: #009999; /* Color de fondo al pasar el ratón */
+  --color: #1a1a1a; /* Color del texto del botón */
+}
+
+@keyframes moveLogo {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes driveCar {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+@keyframes enterCar {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-10px); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button.iniciar-sesion,
+button.registrarse,
+button.salir {
+    background-color: #00008B; /* Azul oscuro */
+    color: #FFFFFF; /* Letras blancas */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Espacio entre los botones */
+  margin-top: 20px; /* Espacio superior para separar del título */
+}
+
+button {
+  width: 80%; /* Ajusta el ancho de los botones */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px; /* Bordes redondeados para un aspecto más atractivo */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.iniciar-sesion {
+  background-color: #007bff; /* Color del botón de iniciar sesión */
+  color: white;
+}
+
+.registrarse {
+  background-color: #28a745;
+}

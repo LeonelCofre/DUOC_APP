@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles del Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2>{{ viaje.conductor }}</h2>
+    <p>Detalles del vehículo: {{ viaje.vehiculo }}</p>
+    <p>Origen: {{ viaje.origen }}</p>
+    <p>Destino: {{ viaje.destino }}</p>
+    <div id="map"></div>
+    <p>Fecha y hora: {{ viaje.fecha }} {{ viaje.hora }}</p>
+    <p>Asientos disponibles: {{ viaje.asientosDisponibles }}</p>
+    <p>Monto: {{ viaje.monto }} por pasajero</p>
+    <ion-button expand="full" color="primary" (click)="enviarSolicitud()">Enviar Solicitud</ion-button>
+    <ion-button expand="full" color="secondary" (click)="atras()">Atrás</ion-button>
+  </div>
+</ion-content>

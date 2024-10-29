@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Buscar Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Buscar Viaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Recuadro de Viajes Disponibles -->
+  <ion-card *ngIf="viajes.length > 0; else noViajes">
+    <ion-card-header>
+      <ion-card-title>Viajes Disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let viaje of viajes">
+        <ion-label (click)="verDetalles(viaje)">
+          <h2>{{ viaje.conductor }}</h2>
+          <p>Origen: {{ viaje.origen }} - Destino: {{ viaje.destino }}</p>
+          <p>Fecha y Hora: {{ viaje.fechaHora | date: 'MMM dd, yyyy HH:mm' }}</p>
+          <p>Asientos Disponibles: {{ viaje.asientosDisponibles }}</p>
+          <p>Monto por Pasajero: {{ viaje.monto | currency }}</p>
+        </ion-label>
+        <ion-button slot="end" (click)="solicitarViaje(viaje)">Solicitar</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ng-template #noViajes>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>No hay viajes disponibles</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>No hay viajes disponibles en este momento. Por favor, intenta más tarde.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <!-- Botón Atrás -->
+  <ion-button expand="full" color="medium" (click)="volver()">Atrás</ion-button>
+</ion-content>

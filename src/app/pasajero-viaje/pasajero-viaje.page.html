@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Estado de Solicitud</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Estado de Solicitud</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles del Viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Estado: {{ solicitud.estado_solicitud }}</p>
+      <p *ngIf="solicitud.detalles">Origen: {{ solicitud.detalles.origen }}</p>
+      <p *ngIf="solicitud.detalles">Destino: {{ solicitud.detalles.destino }}</p>
+      <p *ngIf="solicitud.detalles">Fecha y Hora: {{ solicitud.detalles.fechaHora | date: 'MMM dd, yyyy HH:mm' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón Anular solicitud -->
+  <ion-button expand="full" color="danger" (click)="anularSolicitud()">Anular solicitud</ion-button>
+
+  <!-- Botón Atrás -->
+  <ion-button expand="full" color="medium" (click)="salir()">Atrás</ion-button>
+</ion-content>

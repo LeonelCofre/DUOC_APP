@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Conductor Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Conductor Viaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!-- Lista de solicitudes -->
+  <ion-card *ngFor="let solicitud of solicitudes">
+    <ion-card-header>
+      <ion-card-title>Solicitud de {{ solicitud.nombrePasajero }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="aceptarSolicitud(solicitud)">Aceptar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botones de acciones -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="full" color="danger" (click)="anularViaje()">Anular viaje</ion-button>
+      <ion-button expand="full" color="primary" (click)="iniciarViaje()">Iniciar viaje</ion-button>
+      <ion-button expand="full" color="medium" (click)="salir()">Salir</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

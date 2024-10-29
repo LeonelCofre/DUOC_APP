@@ -1,0 +1,34 @@
+.logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+ion-header, ion-toolbar {
+  background-color: #4CAF50; /* Color de fondo moderno */
+  color: white; /* Color del texto */
+}
+
+ion-content {
+  background-color: #f4f4f4; /* Fondo claro para el contenido */
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+ion-button {
+  margin: 10px 0;
+}

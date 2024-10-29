@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pasajero</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!-- Lista de viajes disponibles -->
+  <ion-list>
+    <ion-item *ngFor="let viaje of viajesDisponibles">
+      <ion-label>
+        <h2>Fecha: {{ viaje.fecha }}</h2>
+        <p>Hora: {{ viaje.hora }}</p>
+        <p>Asientos disponibles: {{ viaje.asientos }}</p>
+        <p>Destino: {{ viaje.destino }}</p>
+        <p>Monto: {{ viaje.monto }}</p>
+        <p>Conductor: {{ viaje.conductor }}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="enviarSolicitud(viaje)">Avisar al conductor que estoy listo</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón de salida -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="full" (click)="salir()">Salir</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
