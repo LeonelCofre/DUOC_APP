@@ -22,10 +22,7 @@
       "es2018", 
       "dom"
     ],
-    "useDefineForClassFields": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
